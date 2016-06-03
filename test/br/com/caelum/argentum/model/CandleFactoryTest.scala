@@ -24,12 +24,16 @@ class CandleFactoryTest extends Specification {
       candle.isBaixa must_== false
     }
 
-    "gerar um candle com mínimo 40.5" in {
+    "gerar um candle com mínimo igual a 40.5" in {
       candle.minimo must_== 40.5
     }
 
-    "gerar um candle com máximo 53.3" in {
+    "gerar um candle com máximo igual a 53.3" in {
       candle.maximo must_== 53.3
+    }
+
+    "gerar um candle com volume igual a 18860.0" in {
+      candle.volume must_== 18860.0
     }
   }
 }
