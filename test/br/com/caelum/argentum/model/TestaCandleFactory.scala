@@ -11,9 +11,11 @@ class TestaCandleFactory extends Specification {
 
   "Não será possível gerar o candle, " >> {
     val agora = LocalDateTime.now()
+
     "caso tenha uma negociação com quantidade negativa " in {
       new CandleFactory().constroiCandleParaData(agora, List(Negociacao(BigDecimal(40.5), -100, agora))) must throwA[IllegalArgumentException]
     }
+
     "caso tenha uma negociação com data nula" in {
       new CandleFactory().constroiCandleParaData(agora, List(Negociacao(BigDecimal(40.5), -100, null))) must throwA[IllegalArgumentException]
     }
